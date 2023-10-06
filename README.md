@@ -1,6 +1,6 @@
 # Product_Sales_Predictions
 ----------------------------------------------------------------------------
-##Using a variety of data to make predictions that will improve product sales 
+Using a variety of data to make predictions that will improve product sales 
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/8affcf03-e60d-450d-9467-cec5d0190dcf)
 <sup>https://www.mageplaza.com/blog/where-to-sell-your-product.html</sup>
