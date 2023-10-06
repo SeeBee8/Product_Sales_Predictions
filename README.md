@@ -7,15 +7,16 @@ Using a variety of data to make predictions that will improve product sales
 
 Author:  *Christina Brockway*
 --------------------------------------------------------------------------------------------------
-###What influences the sales of a product?  Is it shelf placement, type of store, visibility?  These are just a sample of variables to look at when predicting product sales.  This project uses a dataset with these variables and a few more.  By identifiying features that influence product sales, an establishment should be able to increase sales based on those features.  
+### What influences the sales of a product?  Is it shelf placement, the type of store, maybe visibility?  These are just an example of variables to look at when predicting product sales.  This project uses a dataset with these variables in addition to a few more.  By identifiying features that influence product sales, an establishment should be able to increase sales based on those features.  
 
 The goal of this project is to design a model that will predict the sales of certain products, and to be able to use those predictions to increase sales overall.
 
-###DataSource
+## DataSource
 https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/
+
 For this dataset, there were 8523 records(rows) and 12 features(columns).
 
-####Data Dictionary
+### Data Dictionary
 | **Feature Name**          | **Description**                                                                                                                                                                                               | **Other info** |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
 | Item_Identifier           | Product ID                                                                                                                                                                                                    | --             |
@@ -35,7 +36,7 @@ For this dataset, there were 8523 records(rows) and 12 features(columns).
 
 -----------------------------------------------------------------------------------------------
 
-##Methods
+## Methods
 In order to prepare the data for machine learning, it needs to be cleaned and inspected. This anaylsis was done using the CRISP_DM for Machine Learning.  
 
 The following processes were performed after cleaning:
@@ -43,18 +44,17 @@ The following processes were performed after cleaning:
 2.  Explanatory Visualization
 3.  Machine Learning
 
-####Exploratory Data Analysis and Explanitory Visualiztion
+### Exploratory Data Analysis and Explanitory Visualiztion
 In this step each feature is looked at and compared to the Sales Price.  Using boxplots, histograms, and countplots the data is displayed in a clear and concise way to understand it. A heat map was also used to look for correlations.  Each feature is then evaluated for the impact it will have on sales.
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/e4b7c8e8-a6e7-45f7-a8f1-81bc8494fa7d)
 
-![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/5431206d-a4c7-4f48-a4b0-68fecd231503)
 
 Each feature is then evaluated for the impact it will have on sales.
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/15ee170c-9ce9-4318-aba9-3fdc2504ad62)
 
-####Machine Learning
+### Machine Learning
 The following models were used:
 -  Linear Regression Model
 -  Decision Tree Regressor Model
