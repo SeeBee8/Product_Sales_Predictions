@@ -60,7 +60,7 @@ The following models were used:
 -  Random Forest Regressor Model
 -  Decision Tree Regressor Model
 
-##  Looking at Feature Importance
+## Looking at Feature Importance
 
 ![top 10 LR image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/56d70290-9e48-45b3-a070-877483a69b6f)
 **The top 3 most impactful features using this model are Outlet_Identifier, Item_Type, and Item_MRP.**
@@ -79,7 +79,7 @@ These features show they are important in the ability for both the Linear Regres
 ![MRPvsSales](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/b27eb9c9-24ae-4dd5-8dcd-424918c119b2)
 As seen in this plot Item_MRP has a high impact on ability to predict Item_Outlet_Sales.  This feature also had a high impact looking at the Linear Regression Model.  This feature was over 50% of the importance in this model.  
 
-##  Evaluation
+## Evaluation
 
 Each model was evaluated for performance using the R2 score, MAE, and MSE metrics. They were then further looked at for the impact each feature had on the model.
 
