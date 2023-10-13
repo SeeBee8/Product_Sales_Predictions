@@ -60,7 +60,7 @@ The following models were used:
 -  Random Forest Regressor Model
 -  Decision Tree Regressor Model
 
-####Looking at Feature Importance
+##Looking at Feature Importance
 
 ![top 10 LR image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/56d70290-9e48-45b3-a070-877483a69b6f)
 **The top 3 most impactful features using this model are Outlet_Identifier, Item_Type, and Item_MRP.**
@@ -73,12 +73,14 @@ The following models were used:
 
 ![Top 5 DT image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/2fce6414-862c-4508-96ab-89bfcb7b8610)
 **The top most importance features according to this model are the Item_MRP, Outlet_Type, Outlet_Identifier, Item_Visibilty, and Item_Weight.**
+
 These features show they are important in the ability for both the Linear Regression Model and the Dedision Tree Model.  Outlet_Type and Outlet_Identifier have a high number of values that are used for the model and came up multiple times in the importance.  It may be worth keeping these features, but possibly spitting them into smaller subsets.
 
 ![MRPvsSales](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/b27eb9c9-24ae-4dd5-8dcd-424918c119b2)
 As seen in this plot Item_MRP has a high impact on ability to predict Item_Outlet_Sales.  This feature also had a high impact looking at the Linear Regression Model.  This feature was over 50% of the importance in this model.  
 
-###Evaluation
+##Evaluation
+
 Each model was evaluated for performance using the R2 score, MAE, and MSE metrics. They were then further looked at for the impact each feature had on the model.
 
 In this case the Decision Tree Regressor Model out performed the other models.  Looking at the R2 score the Decision Tree model was able to predict 60%  of the  prices correct. The MSE shows the Decistion Tree model's ability to predict the price is much more accurate than other models.  This model was able to predict product sales within $700. 
