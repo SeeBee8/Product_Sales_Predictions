@@ -45,7 +45,7 @@ The following processes were performed after cleaning:
 3.  Machine Learning
 
 ### Exploratory Data Analysis and Explanitory Visualiztion
-In this step each feature is looked at and compared to the Sales Price.  Using boxplots, histograms, and countplots the data is displayed in a clear and concise way to understand it. A heat map was also used to look for correlations.  Each feature is then evaluated for the impact it will have on sales.
+In this step each feature is looked at and compared to the Sales Price.  Using boxplots, histograms, and countplots the data is displayed in a clear and concise way to understand it. A heat map was also used to look for correlations.  
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/e4b7c8e8-a6e7-45f7-a8f1-81bc8494fa7d)
 
@@ -74,7 +74,7 @@ The following models were used:
 ![Top 5 DT image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/2fce6414-862c-4508-96ab-89bfcb7b8610)
 **The top most importance features according to this model are the Item_MRP, Outlet_Type, Outlet_Identifier, Item_Visibilty, and Item_Weight.**
 
-These features show they are important in the ability for both the Linear Regression Model and the Dedision Tree Model.  Outlet_Type and Outlet_Identifier have a high number of values that are used for the model and came up multiple times in the importance.  It may be worth keeping these features, but possibly spitting them into smaller subsets.
+These features show they are important in the ability for both the Linear Regression Model and the Decision Tree Model.  Outlet_Type and Outlet_Identifier have a high number of values that are used for the model and came up multiple times in the importance.  It may be worth keeping these features, but possibly spitting them into smaller subsets.
 
 ![MRPvsSales](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/b27eb9c9-24ae-4dd5-8dcd-424918c119b2)
 As seen in this plot Item_MRP has a high impact on ability to predict Item_Outlet_Sales.  This feature also had a high impact looking at the Linear Regression Model.  This feature was over 50% of the importance in this model.  
@@ -83,7 +83,7 @@ As seen in this plot Item_MRP has a high impact on ability to predict Item_Outle
 
 Each model was evaluated for performance using the R2 score, MAE, and MSE metrics. They were then further looked at for the impact each feature had on the model.
 
-In this case the Decision Tree Regressor Model out performed the other models.  Looking at the R2 score the Decision Tree model was able to predict 60%  of the  prices correct. The MSE shows the Decistion Tree model's ability to predict the price is much more accurate than other models.  This model was able to predict product sales within $700. 
+In this case the Decision Tree Regressor Model out performed the other models.  Looking at the R2 score the Decision Tree model was able to predict 60%  of the prices correctly. The MSE shows the Decistion Tree model's ability to predict the price is much more accurate than other models.  This model was able to predict product sales within $700. 
 
 **Overall Recommended Model**
 
@@ -98,13 +98,13 @@ In this case the Decision Tree Regressor Model out performed the other models.  
 
 **Comparing the training vs. test scores to see what extent is this model overfit/underfit?**
 
-*This model performs very close to the sam  on the training data than on the testing data. This could indicate bias since the R2 score is at 60%*
+*This model performs about the same on the training data as on the testing data. This could indicate bias since the R2 score is at 60%*
 
 **What changes would I make to this project**
 
   - *After looking at the important features, I would remove some of the other features that have a high cardinality.  With these features eliminated there may be a different dynamic to the dataset.*  
   - *I would consider dividing up some of the features with high cardinality into sub-groups to see how they truly impact the Item_Outlet_Sales.*
   - *There could be other ways to tune the model to change the bias*
-  - *If the features that have a lot of NaN values show little impact on predictions, consider dropping those columns, as there is a lot of missing information.*
+  - *If the features that have a lot of NaN values that show little impact on predictions, consider dropping those columns, as there is a lot of missing information in this dataset.*
 
 
