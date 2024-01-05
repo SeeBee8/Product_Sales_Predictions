@@ -1,15 +1,16 @@
 # Product_Sales_Predictions
 ----------------------------------------------------------------------------
-Using a variety of data to make predictions that will improve product sales 
+Improving product sales by predicting what influences them. 
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/8affcf03-e60d-450d-9467-cec5d0190dcf)
 <sup>https://www.mageplaza.com/blog/where-to-sell-your-product.html</sup>
 
 Author:  *Christina Brockway*
 --------------------------------------------------------------------------------------------------
-### What influences the sales of a product?  Is it shelf placement, the type of store, maybe visibility?  These are just an example of variables to look at when predicting product sales.  This project uses a dataset with these variables in addition to a few more.  By identifiying features that influence product sales, an establishment should be able to increase sales based on those features.  
+### What influences the sales of a product?  Is it shelf placement, the type of store, maybe visibility?  These are just an example of variables to look at when predicting product sales.  This project uses a dataset with these product variables and a few more.  
+### By identifiying features that influence product sales, an establishment should be able to increase sales based on those features.  
 
-The goal of this project is to design a model that will predict the sales of certain products, and to be able to use those predictions to increase sales overall.
+The goal of this project is to design a model that will predict the sales of  products based on available features, and to be able to use those predictions to increase sales.
 
 ## DataSource
 https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/
@@ -47,10 +48,12 @@ The following processes were performed after cleaning:
 ### Exploratory Data Analysis and Explanitory Visualiztion
 In this step each feature is looked at and compared to the Sales Price.  Using boxplots, histograms, and countplots the data is displayed in a clear and concise way to understand it. A heat map was also used to look for correlations.  
 
+The following graphs illustrate the sales amount for products in the stores.  Examples would be meats,  dairy, electronics.... The graph shows a count of the number of products in order from most to least.  The boxplot below the first graph is another way of showing the distribution of the number of products. The boxplot is a good way of identifying the presence of outlier data numbers.  These outliers can then be dealt with to avoid skewing the model.
+
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/e4b7c8e8-a6e7-45f7-a8f1-81bc8494fa7d)
 
 
-Each feature is then evaluated for the impact it will have on sales.
+Each feature is then evaluated for the impact it will have on sales.  The following graph shows the four types of supermarkets and how much those supermarkets have sold in dollars.  Supermarket types 1 and 3 have consistantly sold the largest amount.  Looking at what these markets sell and how they market thier products is one way of improving sales.
 
 ![image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/15ee170c-9ce9-4318-aba9-3fdc2504ad62)
 
@@ -62,7 +65,6 @@ The following models were used:
 
 ## Looking at Feature Importance
 
-![top 10 LR image](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/56d70290-9e48-45b3-a070-877483a69b6f)
 **The top 3 most impactful features using this model are Outlet_Identifier, Item_Type, and Item_MRP.**
 
   -  Outlet_Identifier: This is the unique identifier for each outlet. This feature is the most impactful on predeicting Outlet_Item_Sales. Depending on the Outlet, some are better than others at producing high sales numbers.
@@ -76,35 +78,36 @@ The following models were used:
 
 These features show they are important in the ability for both the Linear Regression Model and the Decision Tree Model.  Outlet_Type and Outlet_Identifier have a high number of values that are used for the model and came up multiple times in the importance.  It may be worth keeping these features, but possibly spitting them into smaller subsets.
 
-![MRPvsSales](https://github.com/SeeBee8/Product_Sales_Predictions/assets/141530991/b27eb9c9-24ae-4dd5-8dcd-424918c119b2)
-As seen in this plot Item_MRP has a high impact on ability to predict Item_Outlet_Sales.  This feature also had a high impact looking at the Linear Regression Model.  This feature was over 50% of the importance in this model.  
-
+----------------------------------------------------------
 ## Evaluation
 
-Each model was evaluated for performance using the R2 score, MAE, and MSE metrics. They were then further looked at for the impact each feature had on the model.
+Each model was evaluated for performance using a comparison of statistics for the default model and the prediction model (R2 score, MAE, and MSE metrics). The data was then further looked at for the impact each feature had on the model.
 
 In this case the Decision Tree Regressor Model out performed the other models.  Looking at the R2 score the Decision Tree model was able to predict 60%  of the prices correctly. The MSE shows the Decistion Tree model's ability to predict the price is much more accurate than other models.  This model was able to predict product sales within $700. 
 
-**Overall Recommended Model**
-
-*The tuned Decision Tree Regressor model had the best performance*
-
-**Interprertation of model's performance based on R-squared**
-
-*Based on R-squared, the tuned Decision Tree Model had the best perfomance on both training and testing data. Bias was lower compared to other models. Variance was negligent compared to other models.*
-
-**Another regression metric (RMSE/MAE/MSE) to express the performance of the model.**
-*Looking at the MSE the Decision Tree Regressor model would predict within  $740 of the actual Item_Outlet_Sales.  Although the Random Forest model could also predict sales within that range, the Random Forest model had a high variance.*
-
-**Comparing the training vs. test scores to see what extent is this model overfit/underfit?**
-
-*This model performs about the same on the training data as on the testing data. This could indicate bias since the R2 score is at 60%*
-
-**What changes would I make to this project**
-
+**What ways could I improve this project**
   - *After looking at the important features, I would remove some of the other features that have a high cardinality.  With these features eliminated there may be a different dynamic to the dataset.*  
   - *I would consider dividing up some of the features with high cardinality into sub-groups to see how they truly impact the Item_Outlet_Sales.*
   - *There could be other ways to tune the model to change the bias*
   - *If the features that have a lot of NaN values that show little impact on predictions, consider dropping those columns, as there is a lot of missing information in this dataset.*
+
+## **Overall Recommendations**
+
+1.  Look at Outlets OUT27, OUT13, OUT17 to see how they differ from OUT10 and OUT19
+  -  These differences should show why one outlet type outperforms the another
+
+2.  Stock more items types that are bought more often the top 5 are:
+  -  Dairy
+  -  Starchy foods
+  -  Fruits and Vegetables
+  -  Snack foods
+  -  Frozen foods
+
+3.  Look at item with higher maximum retail prices.  These items will increase sales numbers by approximately 10. Having more items with high retail prices will increase sales.
+
+4.  Look at supermarket types 1 and 3 and see how their products differ from types 2 and 4.
+  - Similar to looking at outlet types, these differences should show why one supermarket type outperforms another.
+
+5.  Continue to evaluate features with the model to monitor changes and see how they influence sales. 
 
 
