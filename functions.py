@@ -7,9 +7,15 @@ import seaborn as sns
 import plotly.express as px
 pd.set_option("display.max_columns", 100)
 
-
+@st.cache_data
+def load_data():
+    fpath = 'data/sales_prediction_clean.csv'
+    df = pd.read_csv(fpath)
+    return df
+df= load_data()
 
 ### NUMERIC FEATURES
+
 def explore_numeric(df, x, figsize=(6,5) ):
   """Source: https://login.codingdojo.com/m/606/13765/117605"""
   # Making our figure with gridspec for subplots
@@ -20,12 +26,14 @@ def explore_numeric(df, x, figsize=(6,5) ):
   sns.histplot(data=df, x=x, ax=axes[0])
   # Boxplot on Bottom
   sns.boxplot(data=df, x=x, ax=axes[1])
+  ## Adding a title
+  axes[0].set_title(f"Column: {x}", fontweight='bold')
   ## Adjusting subplots to best fill Figure
   fig.tight_layout()
+  # Ensure plot is shown before message
+  plt.show()
   return fig
-## Define Returned variables
-fig, ax = explore_numeric (df, "Item_Weight")
-st.pyplot(fig)
+
 
 ## NUMERIC VS TARGET
 def plot_numeric_vs_target(df, x, y='Item_Outlet_Sales', figsize=(6,4), **kwargs): # kwargs for sns.regplot
@@ -46,10 +54,10 @@ def plot_numeric_vs_target(df, x, y='Item_Outlet_Sales', figsize=(6,4), **kwargs
 ### CATEGORICAL FEATURES
 def explore_categorical(df, x, fillna = True, placeholder = 'MISSING',
                         figsize = (6,4), order = None):
-  """Source: https://login.codingdojo.com/m/606/13765/117604"""
-  # Make a copy of the dataframe and fillna
+ 
+  # Make a copy of the dataframe and fillna 
   temp_df = df.copy()
-  # Before filling nulls, save null value counts and percent for printing
+  # Before filling nulls, save null value counts and percent for printing 
   null_count = temp_df[x].isna().sum()
   null_perc = null_count/len(temp_df)* 100
   # fillna with placeholder
@@ -57,17 +65,19 @@ def explore_categorical(df, x, fillna = True, placeholder = 'MISSING',
     temp_df[x] = temp_df[x].fillna(placeholder)
   # Create figure with desired figsize
   fig, ax = plt.subplots(figsize=figsize)
-  # Plotting a count plot
+  # Plotting a count plot 
   sns.countplot(data=temp_df, x=x, ax=ax, order=order)
   # Rotate Tick Labels for long names
   ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
-  # Fit layout and show plot 
+  # Add a title with the feature name included
+  ax.set_title(f"Column: {x}")
+  
+  # Fix layout and show plot 
   fig.tight_layout()
   plt.show()
+    
   return fig, ax
-## Define Returned variables
-fig, ax = explore_categorical (df, "Item_Fat_Content")
-st.pyplot(fig)
+
 
 
 #### CATEGORICAL VS TARGET 

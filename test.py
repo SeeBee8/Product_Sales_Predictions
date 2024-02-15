@@ -1,8 +1,3 @@
-### Sales Prediction App
-#Sidebar displaying descriptive stats, summary info, null info buttons
-# Dataframe of data, EDA of features, feature vs target plots
-
-
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -88,3 +83,4 @@ else:
     
 
 st.pyplot(fig)
+
