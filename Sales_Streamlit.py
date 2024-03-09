@@ -5,6 +5,7 @@
 
 import pandas as pd
 import streamlit as st
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -67,7 +68,7 @@ column = st.selectbox(label="Select a feature", options=df.columns)
 
 # Conditional statement to determine which function to use
 if df[column].dtype == 'object':
-    fig, ax  = fn.explore_categorical(df, column)
+    plt, ax  = fn.explore_categorical(df, column)
 else:
     fig = fn.explore_numeric(df, column)
     
@@ -82,9 +83,10 @@ column = st.selectbox(label="Select a feature", options=options)
 
 # Conditional statement to determine which function to use
 if df[column].dtype == 'object':
-    fig, ax  = fn.plot_categorical_vs_target(df, x=column)
+    plt, ax  = fn.plot_categorical_vs_target(df, x=column)
 else:
-    fig, ax = fn.plot_numeric_vs_target(df, x=column)
+    plt, ax = fn.plot_numeric_vs_target(df, x=column)
     
 
-st.pyplot(fig)
+st.pyplot(plt)
+
