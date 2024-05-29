@@ -40,13 +40,13 @@ For this dataset, there were 8523 records(rows) and 12 features(columns).
 ## Methods
 This project was created using a variety of powerful tools and libraries to explore and analyze data effectively. The technologies utilized include:
 
-Google Colab: For interactive coding and collaboration.
-Matplotlib: For creating detailed visualizations and plots.
-Scikit-learn (sklearn): For implementing machine learning algorithms.
-Python: The core programming language used throughout the project.
-Pandas: For data manipulation and analysis.
-NumPy: For numerical computing.
-Streamlit: For building and deploying an interactive web application.
+- **[Google Colab](https://colab.research.google.com/)**: For interactive coding and collaboration.
+- **[Matplotlib](https://matplotlib.org/)**: For creating detailed visualizations and plots.
+- **[Scikit-learn (sklearn)](https://scikit-learn.org/)**: For implementing machine learning algorithms.
+- **[Python](https://www.python.org/)**: The core programming language used throughout the project.
+- **[Pandas](https://pandas.pydata.org/)**: For data manipulation and analysis.
+- **[NumPy](https://numpy.org/)**: For numerical computing.
+- **[Streamlit](https://streamlit.io/)**: For building and deploying an interactive web application.
 
 Using the CRISP_DM for Machine Learning the data was inspected, cleaned, and prepared.
 
