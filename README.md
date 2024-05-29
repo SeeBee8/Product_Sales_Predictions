@@ -38,7 +38,17 @@ For this dataset, there were 8523 records(rows) and 12 features(columns).
 -----------------------------------------------------------------------------------------------
 
 ## Methods
-In order to prepare the data for machine learning, it needs to be cleaned and inspected. This anaylsis was done using the CRISP_DM for Machine Learning.  
+This project was created using a variety of powerful tools and libraries to explore and analyze data effectively. The technologies utilized include:
+
+Google Colab: For interactive coding and collaboration.
+Matplotlib: For creating detailed visualizations and plots.
+Scikit-learn (sklearn): For implementing machine learning algorithms.
+Python: The core programming language used throughout the project.
+Pandas: For data manipulation and analysis.
+NumPy: For numerical computing.
+Streamlit: For building and deploying an interactive web application.
+
+Using the CRISP_DM for Machine Learning the data was inspected, cleaned, and prepared.
 
 The following processes were performed after cleaning:
 1.  Exploratory Data Analysis
